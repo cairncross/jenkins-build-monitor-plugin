@@ -13,6 +13,11 @@ angular.
 
     controller('JobViews', ['$scope', '$rootScope', '$window', 'connectivityStrategist', 'every', 'proxy',
         function ($scope, $rootScope, $window, connectivityStrategist, every, proxy) {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "./iframeResizer.contentWindow.min.js";
+            document.body.appendChild(script);
+            
             var tryToRecover  = connectivityStrategist.decideOnStrategy,
                 fetchJobViews = proxy.buildMonitor.fetchJobViews;
 
